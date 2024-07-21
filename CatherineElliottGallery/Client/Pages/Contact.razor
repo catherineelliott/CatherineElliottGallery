@@ -1,0 +1,17 @@
+﻿@page "/contact"
+@using CatherineElliottGallery.Shared
+@inject NavigationManager MyNavigationManager
+
+<PageTitle>Contact</PageTitle>
+
+<p>If you would like to contact me by email please click the button below</p>
+<button class="btn btn-primary" onclick="@SendEmail">Send email</button>
+
+@code {
+    private string Email;
+
+    protected void SendEmail()
+    {
+        MyNavigationManager.NavigateTo("mailto:catherine-blake@hotmail.co.uk");
+    }
+}

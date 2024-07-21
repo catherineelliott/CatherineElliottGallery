@@ -1,0 +1,72 @@
+﻿@page "/artwork/{type}"
+@using CatherineElliottGallery.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@implements IDisposable
+
+<PageTitle>Artwork</PageTitle>
+
+
+<div class="container">
+    @if (Model == null)
+    {
+        <p class="text-muted">Loading...</p>
+    }
+    else
+    {  
+        <div class="row">
+            <h1>@Model.title</h1>
+            <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+              
+                    @foreach (var image in Model.images)
+                    {
+                        <div class="card mb-3">
+                            <img src="@image.fileName" class="card-img-top" alt="@image.description">
+                            <div class="card-body">
+                                <h5 class="card-title">@image.title</h5>
+                                <p class="card-text">@image.description</p>
+                                <p class="card-text"><small class="text-muted">@image.date</small></p>
+                            </div>
+                        </div>
+                    }
+            
+                </div>
+            <div class="col-sm-3"></div>
+        </div>
+    }
+</div>
+
+
+@code {
+    [Parameter]
+    public string? Type { get; set; }
+
+    private ArtType Model { get; set; }
+
+    async Task RefreshData()
+    {
+        var data = await Http.GetFromJsonAsync<DataModel>("data/images.json");
+        Model = data.types.Where(t => t.name == Type).FirstOrDefault();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await RefreshData();
+
+        NavigationManager.LocationChanged += LocationChanged;
+        base.OnInitialized();        
+    }
+
+    async void LocationChanged(object sender, LocationChangedEventArgs e)
+    {
+        await RefreshData();
+
+        StateHasChanged();
+    }
+
+    void IDisposable.Dispose()
+    {
+        NavigationManager.LocationChanged -= LocationChanged;
+    }
+}

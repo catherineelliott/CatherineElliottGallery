@@ -1,7 +1,13 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+@font-face {
+    font-family: "GothamBook";
+    src: url("/fonts/GothamBook.ttf") format("truetype");
+}
+
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'GothamBook', Arial, sans-serif;
+    font-size:1.2rem;
 }
 
 h1:focus {
@@ -10,6 +16,10 @@ h1:focus {
 
 a, .btn-link {
     color: #0071c1;
+}
+
+.li-clickable {
+    cursor:pointer;
 }
 
 .btn-primary {
@@ -62,3 +72,68 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+.secondary {
+    background-color: #fff;
+    padding: 0 7.6923%;
+}
+
+.secondary-toggle {
+    background-color: transparent;
+    border: 1px solid #eaeaea;
+    border: 1px solid rgba(51, 51, 51, 0.1);
+    height: 42px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 42px;
+}
+
+@media screen and (min-width: 59.6875em) {
+    .secondary {
+        background-color: transparent;
+        box-shadow: none;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 55em) {
+    .secondary-toggle {
+        height: 64px;
+        width: 64px;
+    }
+}
+
+@media screen and (min-width: 46.25em) {
+    .secondary-toggle {
+        height: 56px;
+        width: 56px;
+    }
+}
+
+
+@media screen and (min-width: 38.75em) {
+    .secondary {
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    }
+}
+
+@media screen and (max-width: 46.25em) {
+    .show-sec {
+        display: block;
+    }
+
+    .hide-sec {
+        display: none;
+    }
+}
+
+

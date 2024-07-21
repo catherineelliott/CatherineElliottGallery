@@ -1,0 +1,124 @@
+{
+  "types": [
+    {
+      "name": "pencil",
+      "title": "Pencil",
+      "images": [
+        {
+          "fileName": "images/pencil/image1.jpg",
+          "title": "Connie",
+          "description": "pencil on paper",
+          "date": "May 2021"
+        },
+        {
+          "fileName": "images/pencil/image2.jpg",
+          "title": "Space invader",
+          "description": "pencil on paper",
+          "date": "Nov 2022"
+        }
+      ]
+    },
+    {
+      "name": "pen",
+      "title": "Pen",
+      "images": [
+        {
+          "fileName": "images/pen/BirdWithSkull.jpg",
+          "title": "Bird with skull",
+          "description": "Fineliner pen on Bristol paper",
+          "date": "September 2023"
+        },
+        {
+          "fileName": "images/pen/BiroFutureWoman.jpg",
+          "title": "Futuristic woman",
+          "description": "Biro in sketchbook",
+          "date": "December 2023"
+        },
+        {
+          "fileName": "images/pen/Surreal.jpg",
+          "title": "Surreal illustration on Bristol paper",
+          "description": "Fineliner pen",
+          "date": "October 2023"
+        },
+        {
+          "fileName": "images/pen/BirdHead.jpg",
+          "title": "Bird",
+          "description": "Fineliner pen in sketchbook",
+          "date": "September 2023"
+        }
+      ]
+    },
+    {
+      "name": "mixed",
+      "title": "Mixed media",
+      "images": [
+        {
+          "fileName": "images/mixed/AlPortrait.jpg",
+          "title": "Alison with sunflowers",
+          "description": "pencil and watercolour pencils",
+          "date": "February 2024"
+        },
+        {
+          "fileName": "images/mixed/Lemurs.jpg",
+          "title": "Lemurs",
+          "description": "pencil and watercolour pencils",
+          "date": "February 2024"
+        },
+        {
+          "fileName": "images/mixed/SelfPortraitGeo.jpg",
+          "title": "Self portrait",
+          "description": "pencil and pastel pencils",
+          "date": "January 2022"
+        }
+      ]
+    },
+    {
+      "name": "watercolour",
+      "title": "Watercolour",
+      "images": [
+        {
+          "fileName": "images/watercolour/ShopFront.jpg",
+          "title": "Northern quarter shop front",
+          "description": "watercolour",
+          "date": "May 2024"
+        },
+        {
+          "fileName": "images/watercolour/AlisonAndDad.jpg",
+          "title": "Alison and Dad, Tenby",
+          "description": "watercolour",
+          "date": "July 2024"
+        }
+      ]
+    },
+    {
+      "name": "procreate",
+      "title": "Procreate",
+      "images": [
+        {
+          "fileName": "images/procreate/helloWorld.png",
+          "title": "Pixel style Hello World sticker",
+          "description": "Illustration created in procreate",
+          "date": "September 2021"
+        },
+        {
+          "fileName": "images/procreate/robop.png",
+          "title": "Dancing robot",
+          "description": "Illustration created in procreate",
+          "date": "September 2021"
+        },
+        {
+          "fileName": "images/procreate/rocket.png",
+          "title": "Rocket",
+          "description": "Illustration created in procreate",
+          "date": "September 2021"
+        },
+        {
+          "fileName": "images/procreate/littleRobot.png",
+          "title": "Little robot",
+          "description": "Illustration created in procreate",
+          "date": "November 2022"
+        }
+      ]
+    }
+  ]
+}
