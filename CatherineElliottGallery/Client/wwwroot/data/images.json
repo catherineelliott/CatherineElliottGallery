@@ -5,16 +5,16 @@
       "title": "Pencil",
       "images": [
         {
-          "fileName": "images/pencil/image1.jpg",
-          "title": "Connie",
-          "description": "pencil on paper",
-          "date": "May 2021"
-        },
-        {
           "fileName": "images/pencil/image2.jpg",
           "title": "Space invader",
           "description": "pencil on paper",
           "date": "Nov 2022"
+        },
+        {
+          "fileName": "images/pencil/image1.jpg",
+          "title": "Connie",
+          "description": "pencil on paper",
+          "date": "May 2021"
         }
       ]
     },

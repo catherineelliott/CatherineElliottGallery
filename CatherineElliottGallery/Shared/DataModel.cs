@@ -2,7 +2,7 @@ namespace CatherineElliottGallery.Shared
 {
     public class DataModel
     {
-       public List<ArtType> types { get; set; }
+        public List<ArtType> types { get; set; } = new();
     }
 
     public class ArtType
@@ -10,7 +10,7 @@ namespace CatherineElliottGallery.Shared
         public string name { get; set; }
         public string title { get; set; }
 
-        public List<Image> images { get; set; }
+        public List<Image> images { get; set; } = new();
     }
 
     public class Image

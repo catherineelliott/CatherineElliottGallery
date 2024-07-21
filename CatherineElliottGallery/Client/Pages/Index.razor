@@ -1,5 +1,57 @@
 ﻿@page "/"
+@using CatherineElliottGallery.Shared
+@inject HttpClient Http
+@inject NavigationManager Navigation
 
 <PageTitle>Index</PageTitle>
 
 <h1>Catherine Elliott Art</h1>
+
+<div class="container">
+    @if (Model == null)
+    {
+        <p class="text-muted">Loading...</p>
+    }
+    else
+    {
+        <div class="row">
+            @*<div class="card-group">*@
+                @foreach (var type in Model)
+                {
+                    <div class="col-sm-4">
+                        <div class="card" 
+                            style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); padding: 16px; text-align: center; background-color: #f1f1f1; cursor: grab;"
+                                @onclick=@(() => NavigateToArtwork(type.name))>
+                            <img src="@type.images.FirstOrDefault().fileName" class="card-img-top" alt="@type.images.FirstOrDefault().description">
+                            <div class="card-body">
+                                <h5 class="card-title">@type.title</h5>
+                            </div>
+                        </div>
+                    </div>
+                }
+            @*</div>*@
+        </div>
+    }
+</div>
+
+
+@code {
+    private List<ArtType> Model { get; set; } = new();
+
+    async Task RefreshData()
+    {
+        var data = await Http.GetFromJsonAsync<DataModel>("data/images.json");
+        Model = data.types.ToList();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await RefreshData();
+    }
+
+    public void NavigateToArtwork(string type)
+    {
+        Navigation.NavigateTo($"artwork/{type}");
+    }
+}
+
