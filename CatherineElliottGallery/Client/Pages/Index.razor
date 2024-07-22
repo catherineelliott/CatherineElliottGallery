@@ -15,21 +15,19 @@
     else
     {
         <div class="row">
-            @*<div class="card-group">*@
                 @foreach (var type in Model)
                 {
                     <div class="col-sm-4">
-                        <div class="card" 
-                            style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); padding: 16px; text-align: center; background-color: #f1f1f1; cursor: grab;"
+                        <div class="card h-100"
+                         style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); padding: 16px; text-align: center; background-color: #f1f1f1; cursor: pointer;"
                                 @onclick=@(() => NavigateToArtwork(type.name))>
-                            <img src="@type.images.FirstOrDefault().fileName" class="card-img-top" alt="@type.images.FirstOrDefault().description">
+                            <img src="@type.FirstImage.fileName" class="card-img-top" alt="@type.FirstImage.description">
                             <div class="card-body">
                                 <h5 class="card-title">@type.title</h5>
                             </div>
                         </div>
                     </div>
                 }
-            @*</div>*@
         </div>
     }
 </div>
@@ -41,6 +39,10 @@
     async Task RefreshData()
     {
         var data = await Http.GetFromJsonAsync<DataModel>("data/images.json");
+        foreach (ArtType type in data.types)
+        {
+            type.FirstImage = type.images.FirstOrDefault();
+        }
         Model = data.types.ToList();
     }
 

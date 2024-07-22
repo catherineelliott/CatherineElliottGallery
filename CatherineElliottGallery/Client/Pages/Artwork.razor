@@ -13,29 +13,34 @@
         <p class="text-muted">Loading...</p>
     }
     else
-    {  
+    {
         <div class="row">
             <h1>@Model.title</h1>
             <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-              
-                    @foreach (var image in Model.images)
-                    {
-                        <div class="card mb-3">
-                            <img src="@image.fileName" class="card-img-top" alt="@image.description">
-                            <div class="card-body">
-                                <h5 class="card-title">@image.title</h5>
-                                <p class="card-text">@image.description</p>
-                                <p class="card-text"><small class="text-muted">@image.date</small></p>
-                            </div>
+            <div class="col-sm-6">
+
+                @foreach (var image in Model.images)
+                {
+                    <div class="card mb-3">
+                        <a href="@image.fileName" target="_blank">
+                            <img class="card-img-top rounded p-2" data-toggle="lightbox"
+                                 data-src="@image.fileName" src="@image.fileName"
+                                 alt="@image.description">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">@image.title</h5>
+                            <p class="card-text">@image.description</p>
+                            <p class="card-text"><small class="text-muted">@image.date</small></p>
                         </div>
-                    }
-            
-                </div>
+                    </div>
+                }
+
+            </div>
             <div class="col-sm-3"></div>
         </div>
     }
 </div>
+
 
 
 @code {
@@ -55,7 +60,7 @@
         await RefreshData();
 
         NavigationManager.LocationChanged += LocationChanged;
-        base.OnInitialized();        
+        base.OnInitialized();
     }
 
     async void LocationChanged(object sender, LocationChangedEventArgs e)

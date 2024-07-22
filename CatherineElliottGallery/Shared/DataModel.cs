@@ -11,6 +11,8 @@ namespace CatherineElliottGallery.Shared
         public string title { get; set; }
 
         public List<Image> images { get; set; } = new();
+
+        public Image FirstImage { get; set; }
     }
 
     public class Image
