@@ -1,17 +1,18 @@
 ﻿@page "/contact"
-@using CatherineElliottGallery.Shared
-@inject NavigationManager MyNavigationManager
+<PageTitle>Contact — Catherine Elliott Art</PageTitle>
 
-<PageTitle>Contact</PageTitle>
+<div class="container py-4" style="max-width: 600px;">
+    <h1>Get in touch</h1>
 
-<p>If you would like to contact me by email please click the button below</p>
-<button class="btn btn-primary" onclick="@SendEmail">Send email</button>
-
-@code {
-    private string Email;
-
-    protected void SendEmail()
-    {
-        MyNavigationManager.NavigateTo("mailto:catherineelliottart@gmail.com");
-    }
-}
+    <div class="d-grid gap-3 mt-4">
+        <a href="mailto:catherineelliottart@gmail.com" class="btn btn-primary">
+            📧 Email me
+        </a>
+        <a href="https://www.instagram.com/catherineelliott_art" class="btn btn-outline-secondary" target="_blank">
+            Instagram
+        </a>
+        <a href="https://www.redbubble.com/people/CathElliott/shop" class="btn btn-outline-secondary" target="_blank">
+            Redbubble Shop
+        </a>
+    </div>
+</div>
